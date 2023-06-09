@@ -59,10 +59,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="greenSignalView" destination="L1t-eX-Sgn" id="dre-FC-sC6"/>
-                        <outlet property="redSignalView" destination="RbH-mG-K3z" id="nTI-fM-dni"/>
                         <outlet property="startButton" destination="lXd-lj-8qZ" id="WfS-UC-gAV"/>
-                        <outlet property="yellowSignalView" destination="ipw-ep-0J9" id="5Il-r9-S4O"/>
+                        <outletCollection property="trafficLightViews" destination="RbH-mG-K3z" collectionClass="NSMutableArray" id="mDo-X3-lPr"/>
+                        <outletCollection property="trafficLightViews" destination="ipw-ep-0J9" collectionClass="NSMutableArray" id="m3r-Mo-vOC"/>
+                        <outletCollection property="trafficLightViews" destination="L1t-eX-Sgn" collectionClass="NSMutableArray" id="uAd-ce-iAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

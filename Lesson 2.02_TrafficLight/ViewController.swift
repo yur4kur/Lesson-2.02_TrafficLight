@@ -9,22 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var redSignalView: UIView!
-    @IBOutlet var yellowSignalView: UIView!
-    @IBOutlet var greenSignalView: UIView!
+    @IBOutlet var trafficLightViews: [UIView]!
     @IBOutlet var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signalViewSetup(redSignalView)
-        signalViewSetup(yellowSignalView)
-        signalViewSetup(greenSignalView)
+        for view in trafficLightViews {
+            signalViewSetup(view)
+        }
     }
 
     @IBAction func startButtonDidTap() {
         startButton.setTitle("NEXT", for: .normal)
-        redSignalView.alpha = 1
+        for signal in trafficLightViews {
+            if signal.alpha == 1 {
+                signal.alpha = 0.3
+                continue
+            } else {
+                signal.alpha = 1
+            }
+            break
+        }
     }
     
     private func signalViewSetup(_ view: UIView) {
