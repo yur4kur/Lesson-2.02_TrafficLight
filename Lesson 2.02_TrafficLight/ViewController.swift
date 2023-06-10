@@ -12,26 +12,26 @@ class ViewController: UIViewController {
     @IBOutlet var trafficLightViews: [UIView]!
     @IBOutlet var startButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         for view in trafficLightViews {
             signalViewSetup(view)
         }
     }
-
+    
     @IBAction func startButtonDidTap() {
         startButton.setTitle("NEXT", for: .normal)
         
         trafficLightViews.last?.alpha = 0.3
         trafficLightViews.first?.alpha = 1
         
-        let changingSignal = trafficLightViews.removeFirst()
-        trafficLightViews.append(changingSignal)
+        let reoderedSignal = trafficLightViews.removeFirst()
+        trafficLightViews.append(reoderedSignal)
     }
     
     private func signalViewSetup(_ view: UIView) {
-        view.layer.cornerRadius = 70
+        view.layer.cornerRadius = view.frame.size.height / 2.0
+        view.clipsToBounds = true
         view.alpha = 0.3
     }
 }
