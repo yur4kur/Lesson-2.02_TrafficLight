@@ -22,15 +22,12 @@ class ViewController: UIViewController {
 
     @IBAction func startButtonDidTap() {
         startButton.setTitle("NEXT", for: .normal)
-        for signal in trafficLightViews {
-            if signal.alpha == 1 {
-                signal.alpha = 0.3
-                continue
-            } else {
-                signal.alpha = 1
-            }
-            break
-        }
+        
+        trafficLightViews.last?.alpha = 0.3
+        trafficLightViews.first?.alpha = 1
+        
+        let changingSignal = trafficLightViews.removeFirst()
+        trafficLightViews.append(changingSignal)
     }
     
     private func signalViewSetup(_ view: UIView) {
@@ -38,4 +35,5 @@ class ViewController: UIViewController {
         view.alpha = 0.3
     }
 }
+
 
