@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         for view in trafficLightViews {
             signalViewSetup(view)
         }
