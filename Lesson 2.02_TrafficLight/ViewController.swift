@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        for view in trafficLightViews {
-            signalViewSetup(view)
-        }
+        signalViewSetup(trafficLightViews)
     }
     
     @IBAction func startButtonDidTap() {
@@ -30,10 +27,12 @@ class ViewController: UIViewController {
         trafficLightViews.append(reoderedSignal)
     }
     
-    private func signalViewSetup(_ view: UIView) {
-        view.layer.cornerRadius = view.frame.size.height / 2.0
-        view.clipsToBounds = true
-        view.alpha = 0.3
+    private func signalViewSetup(_ views: [UIView]) {
+        for view in views {
+            view.layer.cornerRadius = view.frame.size.height / 2.0
+            view.clipsToBounds = true
+            view.alpha = 0.3
+        }
     }
 }
 
