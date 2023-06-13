@@ -29,8 +29,7 @@ class ViewController: UIViewController {
     
     private func signalViewSetup(_ views: [UIView]) {
         for view in views {
-            view.layer.cornerRadius = view.frame.size.height / 2.0
-            view.clipsToBounds = true
+            view.layer.cornerRadius = view.bounds.height / 2.0
             view.alpha = 0.3
         }
     }
