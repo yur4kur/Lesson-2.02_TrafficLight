@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     private func signalViewSetup(_ views: [UIView]) {
-        for view in views {
+        trafficLightViews.forEach { view in
             view.layer.cornerRadius = view.bounds.height / 2.0
             view.alpha = 0.3
         }
